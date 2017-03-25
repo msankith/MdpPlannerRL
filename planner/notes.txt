@@ -1,0 +1,16 @@
+Algorithm used : Value iteration .
+
+Initialization :
+In value iteration , we randomonly intialize state values Vk(s)=rand(0). 
+
+do{
+	for each state and action pair we find Q(s,a) value  using the following equation
+		Q(s,a) = SUM s': P(s'|s,a) * (R(s,a,s')+ Vk-1[s']) 
+
+	Then based on Q(s,a) we set state value as 
+		Vk(s) = MAX a : Q(s,a)
+}
+while(for atleast one state in s: Vk(s) - Vk-1(s)  > ERROR_TOLERANE )
+  
+
+ERROR_TOLERANCE is set to 0.0000000001
